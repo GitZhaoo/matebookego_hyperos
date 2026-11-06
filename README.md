@@ -134,6 +134,10 @@ python3 scripts/verify_artifact.py --check-inputs
 `linux/amd64`；`adapt` 阶段的 `secilc` 在容器内 chroot 到 arm64 Android 根，
 依赖 Docker Desktop 的 qemu-aarch64 binfmt（已实测可用）。
 
+> 本仓库只包含源码、脚本和文档。`input/`、`artifact/`、`bt36/`、
+> `tools/platform-tools/`、`recovery/*.img` 及签名密钥均已在 `.gitignore`
+> 中排除，需要按上文自行准备或从官方 ROM 解包。
+
 如需从官方 ROM 重新解包（当前 `input/pad9/` 已解好，可跳过）：
 
 ```bash
@@ -218,3 +222,13 @@ input/crdroid-vendor.img
 input/boot.rc2.img
   SHA-256 f60c65d2fdd03b601ba1819efebdab165b51bbc630995131f350b35fa873e603
 ```
+
+---
+
+## 8. 致谢
+
+本项目能够运行，离不开社区此前的 gaokun3 Android 移植工作。特别感谢
+**[vahiru/gaokun-android](https://github.com/vahiru/gaokun-android)**：
+其内核、DTB、boot 与硬件适配为本次 HyperOS 4 移植提供了关键基础。
+
+同时感谢 crDroid、KernelSU 以及小米 HyperOS 相关开源社区的工作。
