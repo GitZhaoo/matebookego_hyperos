@@ -1,0 +1,13 @@
+# Temporary bring-up logger. /data is unencrypted on this gaokun3 installation.
+on post-fs-data
+    mkdir /data/gaokun-bootlogs 0700 root root encryption=None
+    start gaokun-bootlog
+
+service gaokun-bootlog /system/bin/sh /system/etc/gaokun-bootlog.sh
+    class core
+    user root
+    group root log system readproc
+    seclabel u:r:gaokun_bootdiag:s0
+    disabled
+    oneshot
+    oom_score_adjust -900

@@ -1,0 +1,30 @@
+# 构建输入 / 中间产物
+input/
+out/
+work/
+reports/
+bootlogs/
+__pycache__/
+*.pyc
+
+# 体积过大的部署产物（不进版本库）
+artifact/*.zst
+artifact/*.img
+artifact/SHA256SUMS
+artifact/modules/
+
+# 恢复镜像（体积过大）
+recovery/*.img
+boot_a.img
+metadata.img
+esp.img
+
+# 第三方预编译工具链（可自行下载）
+bt36/
+tools/platform-tools/
+tools/*.exe
+
+# 签名密钥
+*.keystore
+*.jks
+*.p12

@@ -1,0 +1,22 @@
+Disk /dev/block/nvme0n1: 1000215216 sectors, 476.9 GiB
+Sector size (logical/physical): 512/512 bytes
+Disk identifier (GUID): F2B407F6-2150-487C-B2DE-0C169F3DA0A3
+Partition table holds up to 128 entries
+Main partition table begins at sector 2 and ends at sector 33
+First usable sector is 34, last usable sector is 1000215182
+Partitions will be aligned on 2048-sector boundaries
+Total free space is 2669 sectors (1.3 MiB)
+
+Number  Start (sector)    End (sector)  Size       Code  Name
+   1            2048          616447   300.0 MiB   EF00  esp
+   2          616448          649215   16.0 MiB    0C01  Microsoft reserved ...
+   3          649216       643696639   306.6 GiB   0700  Basic data partition
+   4       958271488       960368639   1024.0 MiB  2700  Basic data partition
+   5       960368640       998117375   18.0 GiB    2700  Basic data partition
+   6       998117376      1000214527   1024.0 MiB  2700  Basic data partition
+   7       643696640       643704831   4.0 MiB     8300  misc
+   8       643704832       643770367   32.0 MiB    8300  metadata
+   9       643770368       643901439   64.0 MiB    8300  boot_a
+  10       643901440       644032511   64.0 MiB    8300  boot_b
+  11       644032512       669198335   12.0 GiB    8300  super
+  12       669198336       958271487   137.8 GiB   8300  userdata

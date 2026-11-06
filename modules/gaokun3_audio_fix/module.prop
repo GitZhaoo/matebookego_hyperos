@@ -1,0 +1,6 @@
+id=gaokun3_audio_fix
+name=gaokun3 HyperOS 音频与性能修复
+description=修复 audioserver 无法访问 ashmem 的 SELinux 缺陷：Enforcing 模式下 AudioTrack 控制块分配失败（createTrack_l 返回 -12），导致全系统无声、音频应用死循环重试、以音频为时钟的播放器（如红果短剧）不启动解码而黑屏。本模块注入 audioserver 的 ashmem 读写权限及初始化所需的属性读取权限，并设置 SurfaceFlinger 空闲降频与 drmhwc 日志级别。GPU 频率调度已拆分到独立模块 gaokun3_gpu_freq。
+author=gaokun3-hyperos4-port-guide
+version=1.2
+versionCode=3

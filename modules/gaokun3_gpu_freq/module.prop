@@ -1,0 +1,6 @@
+id=gaokun3_gpu_freq
+name=gaokun3 HyperOS GPU 频率调度
+description=GPU devfreq min_freq 调度模块。支持固定锁频（8 档可选：270/410/500/547/606/640/655/690 MHz）或息屏降频/亮屏高频的动态切换。修复 simple_ondemand governor 在 1600x2560@120Hz UI 滑动负载下升频不积极导致的卡顿（gfxinfo 90th 13ms->5ms）。从 gaokun3_audio_fix 模块拆分而来。
+author=gaokun3-hyperos4-port-guide
+version=1.0
+versionCode=1

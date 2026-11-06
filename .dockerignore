@@ -1,0 +1,18 @@
+# 构建镜像只需要 Dockerfile；其余全部运行时 bind mount。
+input/
+out/
+work/
+reports/
+bootlogs/
+artifact/
+recovery/
+docs/
+modules/
+assets/
+tests/
+tools/
+bt36/
+scripts/
+.git
+**/__pycache__
+*.md

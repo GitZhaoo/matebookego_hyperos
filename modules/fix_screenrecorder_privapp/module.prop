@@ -1,0 +1,6 @@
+id=fix_screenrecorder_privapp
+name=Fix ScreenRecorder (data-app -> priv-app)
+version=v1
+versionCode=1
+author=opencode
+description=将 MIUIScreenRecorder 从 /product/data-app 迁移到 /product/priv-app，使其获得 signature 级权限 INTERNAL_SYSTEM_WINDOW，修复 HyperOS 录屏点击无反应（Adding window failed / SecurityException）。原始 APK 未修改，仅改变安装位置。

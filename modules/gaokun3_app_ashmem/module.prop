@@ -1,0 +1,6 @@
+id=gaokun3_app_ashmem
+name=gaokun3 应用 ashmem SELinux 修复
+version=v1.0
+versionCode=1
+author=gaokun3-port
+description=放行 untrusted_app 基础域对 /dev/ashmem* 的 open。crDroid 的 plat_sepolicy.cil 只给 untrusted_app_25/27/29/30/32/34 这些按 targetSdk 拆分的版本域授予了 ashmem open 权限，基础域 untrusted_app 一条规则都没有；而 plat_seapp_contexts 有一条 minTargetSdkVersion=37 domain=untrusted_app，导致 targetSdk=37 的应用（Edge 155 等）全部落到未授权的基础域。后果是这类应用启动时 HistoryService::Init() 打开 ashmem 失败、Chromium 直接主动退出，表现为图标闪一下立刻回到桌面，无崩溃弹窗无 ANR。顺带放行 qemu_hw_prop 与 proc_version 的读取，消除 Chromium 启动时探测模拟器环境被拒的噪音日志。按最小权限只授 ashmem_libcutils_device（日志中被拒的正是该标签），不授 ashmem_device。

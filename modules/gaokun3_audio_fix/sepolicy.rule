@@ -1,0 +1,11 @@
+# gaokun3-hyperos audio fix: audioserver needs ashmem for AudioTrack control
+# blocks. The ported plat_sepolicy.cil grants appdomain execute only, so
+# createTrack_l() returns -12 ("no control block?") in enforcing mode:
+#  - every app that plays sound through AudioTrack fails (negative-ENOMEM loop)
+#  - byte-style players (TTMediaPlayer) are audio-clock driven and never start
+#    decoding => video pages stay black
+#  - vendor prop reads audioserver needs at init
+allow audioserver ashmem_libcutils_device chr_file { open read write getattr map ioctl }
+allow audioserver ashmem_device chr_file { open read write getattr map ioctl }
+allow audioserver bootanim_system_prop file { read getattr map open }
+allow audioserver vendor_default_prop file { read getattr map open }

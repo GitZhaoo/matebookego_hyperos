@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- gaokun3 normalized manual LCD backlight; nits are a nominal mapping, not calibration. -->
+<displayConfiguration>
+  <densityMapping><density><height>2560</height><width>1600</width><density>240</density></density></densityMapping>
+  <screenBrightnessDefault>0.5</screenBrightnessDefault>
+  <screenBrightnessMap>
+    <point><value>0.0</value><nits>0.0</nits></point>
+    <point><value>0.04</value><nits>20.0</nits></point>
+    <point><value>1.0</value><nits>500.0</nits></point>
+  </screenBrightnessMap>
+</displayConfiguration>
